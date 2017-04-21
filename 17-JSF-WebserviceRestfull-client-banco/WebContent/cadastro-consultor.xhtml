@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<ui:composition template="/_template.xhtml">
+	<ui:define name="conteudo">
+
+			<h1>Cadastro de Consultor da Natura</h1>	
+			<h:form>
+				<h:messages infoClass="alert alert-success" errorClass="alert alert-danger"/>
+				<div class="form-group">
+					<h:outputLabel  value="Nome" for="nome"/>
+					<h:inputText styleClass="form-control" value="#{consultorBean.consultor.nome}" id="nome"/>
+				</div>
+				<div class="form-group">
+					<h:outputLabel  value="CPF" for="cpf"/>
+					<h:inputText styleClass="form-control" value="#{consultorBean.consultor.cpf}" id="cpf" />
+				</div>
+				<div class="form-group">
+					<h:outputLabel value="Telefone" for="tel" />
+					<h:inputText styleClass="form-control" value="#{consultorBean.consultor.telefone}" id="tel" />
+				</div>
+				<div>
+					<h:commandButton styleClass="btn btn-primary" action="#{consultorBean.cadastrar()}" value="Cadastrar" />
+					<h:link outcome="lista-consultor">Consultores</h:link>
+				</div>
+			</h:form>
+
+	</ui:define>
+</ui:composition>
+</html>
